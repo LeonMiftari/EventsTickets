@@ -11,21 +11,22 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "events")
-public class Event {
+@Table(name = "is_performing")
+public class isPerforming {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String eventName;
-    private String eventType;
-    private int seats;
+    @ManyToOne
+    @JoinColumn(name = "event_id")
+    private Event event;
+
     @ManyToOne
     @JoinColumn(name = "performer_id")
     private Performers performer;
-    private LocalDateTime dateAndTime;
-    private int availableSeats;
+
+    private boolean mainPerformer;
+
     private LocalDateTime createdAt;
     private String createdBy;
 }
-

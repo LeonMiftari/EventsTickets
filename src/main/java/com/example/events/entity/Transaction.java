@@ -11,21 +11,18 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "events")
-public class Event {
+@Table(name = "transactions")
+public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String eventName;
-    private String eventType;
-    private int seats;
-    @ManyToOne
-    @JoinColumn(name = "performer_id")
-    private Performers performer;
-    private LocalDateTime dateAndTime;
-    private int availableSeats;
+    private LocalDateTime transactionDateTime;
+    private String transactionType;
+    private double amount;
+    private String description;
+    private long userId; // Assuming a relationship with a UserEntity
+
     private LocalDateTime createdAt;
     private String createdBy;
 }
-
