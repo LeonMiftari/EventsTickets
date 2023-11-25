@@ -15,17 +15,16 @@ import java.time.LocalDateTime;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+    private long eventId;
     private String eventName;
     private String eventType;
-    private int seats;
     @ManyToOne
-    @JoinColumn(name = "performer_id")
-    private Performers performer;
+    @JoinColumn(name = "performerId")
+    private Performer Performer;
     private LocalDateTime dateAndTime;
-    private int availableSeats;
     private LocalDateTime createdAt;
-    private String createdBy;
+    @ManyToOne
+    @JoinColumn (name = "clientId")
+    private Client createdBy;
 }
 
