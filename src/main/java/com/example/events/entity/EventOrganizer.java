@@ -6,20 +6,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "clients")
-public class Clients{
+public class EventOrganizer implements  Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long eventOrganizerID;
+    private String organizerName;
 
+    @ManyToMany(mappedBy = "organizers")
+    private List<Event> events;
     private String clientName;
     private String email;
     private String phoneNumber;
     private LocalDateTime createdAt;
-    private String createdBy;
+
 }
