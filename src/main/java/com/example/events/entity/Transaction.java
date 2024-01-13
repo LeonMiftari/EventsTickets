@@ -11,18 +11,18 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tickets")
-public class Ticket {
+@Table(name = "transactions")
+public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ticket_id;
+    private long transaction_id;
 
-    private String eventName;
+    private LocalDateTime transactionDateTime;
+    private String transactionType;
+    private double amount;
+    private String description;
     @ManyToOne
-    @JoinColumn(name = "event_id")
-    private Event events;
-    private String ticketCategory;
-    private double ticketPrice;
-    private boolean seatsAvailable = true;
+    @JoinColumn(name = "client_id")
+    private Client clients;
 
 }

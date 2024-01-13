@@ -1,4 +1,4 @@
 package com.example.events.controller;
 
-public class UserController {
+public class ClientController {
 }

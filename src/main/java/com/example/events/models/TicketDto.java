@@ -1,25 +1,17 @@
-package com.example.events.entity;
+package com.example.events.models;
 
-import jakarta.persistence.*;
+import com.example.events.entity.Event;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "tickets")
-public class Ticket {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ticket_id;
+public class TicketDto {
 
     private String eventName;
-    @ManyToOne
-    @JoinColumn(name = "event_id")
     private Event events;
     private String ticketCategory;
     private double ticketPrice;

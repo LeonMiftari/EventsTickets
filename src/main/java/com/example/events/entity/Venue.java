@@ -4,29 +4,33 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
+
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "events")
-public class Event  implements  Serializable{
+@Table(name = "venues")
+public class Venue implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long event_id;
-    private String eventName;
-    private String eventType;
+    private long venue_id;
     @ManyToMany
     @JoinTable(
-            name = "event_organizer_mapping",
-            joinColumns = @JoinColumn(name = "event_id"),
-            inverseJoinColumns = @JoinColumn(name = "event_organizer_id")
+            name = "is_performing",
+            joinColumns = @JoinColumn(name = "venue_id"),
+            inverseJoinColumns = @JoinColumn(name = "performer_id")
     )
-    private List<EventOrganizer> organizers;
+    private List<Performers> performers;
+    private String venueName;
+    private String venueLocation;
+    private int capacity;
+    private String description;
     private boolean active = true;
     private LocalDateTime createdAt;
-    private String createdBy;
+
 }
