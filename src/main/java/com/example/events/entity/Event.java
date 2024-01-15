@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "events")
+<<<<<<< HEAD
 public class Event  implements  Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +30,20 @@ public class Event  implements  Serializable{
     private boolean active = true;
     private LocalDateTime createdAt;
     private String createdBy;
+=======
+public class Event {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long eventId;
+    private String eventName;
+    private String eventType;
+    @ManyToOne
+    @JoinColumn(name = "performerId")
+    private Performer Performer;
+    private LocalDateTime dateAndTime;
+    private LocalDateTime createdAt;
+    @ManyToOne
+    @JoinColumn (name = "clientId")
+    private Client createdBy;
+>>>>>>> 18641aa8193cf1d53e3dbf5d0c758978fbdb2695
 }
