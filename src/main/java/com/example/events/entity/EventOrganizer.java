@@ -30,7 +30,4 @@ public class EventOrganizer implements  Serializable{
     public String createdBy;
 
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 47a77997e3384b7996999735c99b39aca6dd166c
