@@ -1,0 +1,13 @@
+services:
+  eventsDb:
+    image: postgres:13
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - ./postgres/init/:/docker-entrypoint-initDb.d/
+    environment:
+      POSTGRES_DB: events
+      POSTGRES_USER: events
+      POSTGRES_PASSWORD: events
+      PGDATA: /var/lib/postgresql/data/events
+

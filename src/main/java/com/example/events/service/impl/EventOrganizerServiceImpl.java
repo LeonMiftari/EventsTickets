@@ -29,11 +29,19 @@ public class EventOrganizerServiceImpl implements EventOrganizerService{
        repository.save(entity);
        return true;
     }
+<<<<<<< HEAD
 
     @Override
     public List<EventOrganizerDto> getAll() {
         return repository.findAll().stream().map(mapper::toDto).collect(Collectors.toList());
     }
+=======
+//
+//    @Override
+//    public List<EventOrganizerDto> getAll() {
+//        return repository.findAll().stream().map(mapper::toDto).toList();
+//    }
+>>>>>>> 47a77997e3384b7996999735c99b39aca6dd166c
 
     @Override
     public EventOrganizerDto getById(long eventOrganizerId) {

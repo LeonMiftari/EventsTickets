@@ -18,10 +18,10 @@ public class EventOrganizerController {
         this.eventOrganizerService = service;
     }
 
-    @GetMapping
-    public List<EventOrganizerDto> getAllEventOrganizers() {
-        return eventOrganizerService.getAll();
-    }
+//    @GetMapping
+//    public List<EventOrganizerDto> getAllEventOrganizers() {
+//        return eventOrganizerService.getAll();
+//    }
 
     @GetMapping("/{event_organizer_id}")
     public EventOrganizerDto getEventOrganizerById(@PathVariable long event_organizer_id) {
