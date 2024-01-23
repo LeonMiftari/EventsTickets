@@ -28,17 +28,12 @@ public class EventServiceImpl implements EventService {
         return true;
     }
 
-<<<<<<< HEAD
+
     @Override
     public List<EventDto> getAll() {
         return repository.findAll().stream().map(mapper::toDto).collect(Collectors.toList());
     }
-=======
-//    @Override
-//    public List<EventDto> getAll() {
-//        return repository.findAll().stream().map(mapper::toDto).toList();
-//    }
->>>>>>> 47a77997e3384b7996999735c99b39aca6dd166c
+
 
     @Override
     public EventDto getById(long event_id) {
