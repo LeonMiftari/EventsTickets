@@ -10,7 +10,7 @@ import java.util.List;
 public interface EventOrganizerService {
     boolean add(EventOrganizerDto eventOrganizerDto);
 
-    List<EventOrganizerDto> getAll();
+//    List<EventOrganizerDto> getAll();
 
     EventOrganizerDto getById(long eventOrganizerId);
 
