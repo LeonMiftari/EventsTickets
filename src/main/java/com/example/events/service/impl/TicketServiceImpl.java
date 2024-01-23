@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TicketServiceImpl.java
 @Service
 public class TicketServiceImpl implements TicketService {
     private final TicketRepository ticketRepository;
@@ -52,7 +51,7 @@ public class TicketServiceImpl implements TicketService {
 
         // Update ticket fields with values from updatedTicketDto
         ticket.setEventName(updatedTicketDto.getEventName());
-        ticket.setEvents(ticketMapper.toEntity(updatedTicketDto.getEvents()));
+        ticket.setEvents(updatedTicketDto.getEvents());
         ticket.setTicketCategory(updatedTicketDto.getTicketCategory());
         ticket.setTicketPrice(updatedTicketDto.getTicketPrice());
         ticket.setSeatsAvailable(updatedTicketDto.isSeatsAvailable());

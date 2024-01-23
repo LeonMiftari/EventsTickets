@@ -1,10 +1,11 @@
 package com.example.events.service;
 
 import com.example.events.models.TicketDto;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-// TicketService.java
+@Service
 public interface TicketService {
     List<TicketDto> getAllTickets();
 

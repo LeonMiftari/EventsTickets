@@ -9,6 +9,7 @@ import jakarta.persistence.EntityNotFoundException;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EventServiceImpl implements EventService {
 
@@ -29,7 +30,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<EventDto> getAll() {
-        return repository.findAll().stream().map(mapper::toDto).toList();
+        return repository.findAll().stream().map(mapper::toDto).collect(Collectors.toList());
     }
 
     @Override

@@ -1,10 +1,11 @@
 package com.example.events.service;
 
 import com.example.events.models.PerformersDto;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-// PerformerService.java
+@Service
 public interface PerformerService {
     List<PerformersDto> getAllPerformers();
 

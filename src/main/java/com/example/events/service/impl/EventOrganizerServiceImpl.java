@@ -8,6 +8,8 @@ import com.example.events.service.EventOrganizerService;
 import jakarta.persistence.EntityNotFoundException;
 
 import java.util.List;
+import java.util.stream.Collectors;
+//import java.util.ArrayList;
 
 public class EventOrganizerServiceImpl implements EventOrganizerService{
 
@@ -30,7 +32,7 @@ public class EventOrganizerServiceImpl implements EventOrganizerService{
 
     @Override
     public List<EventOrganizerDto> getAll() {
-        return repository.findAll().stream().map(mapper::toDto).toList();
+        return repository.findAll().stream().map(mapper::toDto).collect(Collectors.toList());
     }
 
     @Override
