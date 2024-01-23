@@ -20,10 +20,8 @@ public class Client {
     private long client_id;
 
     @Column(name = "username", nullable = false, unique = true)
-    private String username;
-    private String password;
+    private String companyName;
     private String email;
-    private LocalDate birthdate;
     private LocalDateTime registrationDate;
     private boolean active = true;
     private LocalDateTime createdAt;

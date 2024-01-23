@@ -27,4 +27,5 @@ public class User {
     private boolean active = true;
     private LocalDateTime createdAt;
     private String createdBy;
+
 }
